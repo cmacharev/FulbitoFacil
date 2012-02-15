@@ -1,0 +1,29 @@
+<h1>Locales</h1>
+
+<table>
+  <tr>
+    <th>Descripcion</th>
+    <th>Direccion</th>
+    <th>Distrito</th>
+    <th>Telefono</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @locals.each do |local| %>
+  <tr>
+    <td><%= local.descripcion %></td>
+    <td><%= local.direccion %></td>
+    <td><%= local.distrito %></td>
+    <td><%= local.telefono %></td>
+    <td><%= link_to 'Mostrar', local %></td>
+    <td><%= link_to 'Editar', edit_local_path(local) %></td>
+    <td><%= link_to 'Eliminar', local, confirm: 'Esta Seguro?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Local', new_local_path %>

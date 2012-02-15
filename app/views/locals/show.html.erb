@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Descripcion:</b>
+  <%= @local.descripcion %>
+</p>
+
+<p>
+  <b>Direccion:</b>
+  <%= @local.direccion %>
+</p>
+
+<p>
+  <b>Distrito:</b>
+  <%= @local.distrito %>
+</p>
+
+<p>
+  <b>Telefono:</b>
+  <%= @local.telefono %>
+</p>
+
+
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@local.latitude}%2C#{@local.longitude}" %>
+
+<%= link_to 'Edit', edit_local_path(@local) %> |
+<%= link_to 'Back', locals_path %>
