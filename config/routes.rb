@@ -12,7 +12,7 @@ RentGame::Application.routes.draw do
 	
 	
 
-  #get "admin/index"
+  get "admin/index"
 
   get "sessions/new"
 
@@ -20,7 +20,6 @@ RentGame::Application.routes.draw do
 
   get "sessions/destroy"
 
-  resources :users
 
   get "home/index"
   get "home/propietarios"
