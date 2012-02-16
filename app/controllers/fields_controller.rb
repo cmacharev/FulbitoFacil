@@ -1,4 +1,5 @@
 class FieldsController < ApplicationController
+	
   # GET /fields
   # GET /fields.json
   def index

@@ -1,7 +1,30 @@
 RentGame::Application.routes.draw do
+
+	controller :sessions do
+	get 'login' => :new
+	get 'signup' => "users#new"
+	get 'inicio' => "home#index"
+	
+	post 'login' => :create
+	delete 'logout' => :destroy
+	get "logout" => "sessions#destroy", :as => "logout"
+	end
+	
+	
+
+  #get "admin/index"
+
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
+  resources :users
+
   get "home/index"
   get "home/propietarios"
-  get "home/clientes"
+  get "home/users"
   get "home/locales"
   get "home/canchas_fulbito"
   get "home/servicios"
@@ -12,13 +35,15 @@ RentGame::Application.routes.draw do
 
   resources :services
 
-  resources :customers
+  resources :users
 
   resources :fields
 
   resources :locals
 
   resources :owners
+  
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -23,21 +23,21 @@
 					<div id="logo">
 					
 					<%= image_tag("logo.jpg") %>
-					<h1><span class="blue">GRUPO</span><b> JACAG S.A </b></h1></div>
+					<h1><span class="blue">GRUPO</span><b> JACAG S.A.</b></h1></div>
 										
 					<div class="clearboth"></div>	
-
 					
 					<!-- Menu --><br /><br />
 <table ><tr><td>
  <div id="right_col">
 <h1><%= link_to "Home", home_index_path%></h1>
 <h1><%= link_to "Propietarios", owners_path%></h1>
-<h1><%= link_to "Clientes", customers_path%></h1>
+<h1><%= link_to "Clientes", users_path%></h1>
 <h1><%= link_to "Locales", locals_path%></h1>
 <h1><%= link_to "Canchas de Fulbito",fields_path %></h1>
-<h1><%= link_to "Servicios",services_path %></h1>
+<h1><%= link_to "Servicios Adicionales",services_path %></h1>
 <h1><%= link_to "Publicidad",publicities_path %></h1>
+<h1><%= link_to "Alquiler",publicities_path %></h1>
 </div>
 </td></tr></table>
  
@@ -52,6 +52,23 @@
 				</div>
 				<div id="right_col">
 								<div id="header"><span class="blue">CANCHAS DEPORTIVAS</span><b> FULBITO FACIL</b></div>
+
+
+<body class="<%= params[:controller] %>">
+  <div id="container">
+    <div class="user_nav">
+      <% if current_user %>
+        Sesion : <%= current_user.name %>.
+        <%= link_to "Cerrar Sesion", logout_path %>
+      <% else %>
+        <%= link_to "Registrarse", signup_path %> -
+        <%= link_to "Iniciar Sesion", login_path  %>.
+      <% end %>
+    </div>
+
+
+  </div>
+</body>
 								<div id="left_bgd">																									
 											<div id="header_id"></div>
 											
