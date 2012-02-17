@@ -1,6 +1,9 @@
 <div id="product_list" >
+<div class="news">
 	<h1>Lista de Canchas de Fulbito</h1>
-
+</div>
+<hr class="dottedline">
+<br />
 	<table>
 	<% @fields.each do |field| %>
 	<tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
@@ -29,4 +32,7 @@
 <br />
 
 <%= link_to 'Agregar Cancha de Fulbito', new_field_path %>
+<br />
+<div id="publica">
 <p><%= will_paginate @orders %></p>
+</div>

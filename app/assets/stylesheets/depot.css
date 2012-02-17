@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* Global styles */
 
 #store #notice {
@@ -21,11 +21,13 @@
 
 #product_list table {
         border-collapse: collapse;
+		
 }
 
 #product_list table tr td {
         padding: 5px;
         vertical-align: top;
+		border:solid #ccc 1px;
 }
 
 #product_list .list_image {
@@ -58,11 +60,11 @@
 }
 
 #product_list .list_line_even {
-  background:   #d8eec4;
+  background:   #edf8c0;
 }
 
 #product_list .list_line_odd {
-  background:   #b9e0f4;
+  background:   #fbe6ad;
 }
 
 /* START:mainlayout */
