@@ -1,9 +1,16 @@
 <div id="product_list" >
-<div class="news">
 	<h1>Lista de Canchas de Fulbito</h1>
-</div>
-<hr class="dottedline">
-<br />
+
+<%= current_user.isadm %>
+<%= form_for @search do |f| %>   
+<p>   
+	<%= f.label :nombre_contains, "Nombre" %>   
+	<%= f.text_field :nombre_contains %>   
+	<class="button"><%= f.submit "   Buscar  " %>
+</p>
+
+<% end %>
+
 	<table>
 	<% @fields.each do |field| %>
 	<tr class="<%= cycle('list_line_odd', 'list_line_even') %>" >
@@ -15,24 +22,28 @@
 			<dl
 				<dt><b><%= field.nombre %></b></dt>
 				<dd><%= truncate(strip_tags(field.caracteristicas), :length => 88) %></dd>
+				<dd><b>Costo S/. </b><%= field.tarifa %></dd>
 			</dl>
 		</td>
 
+<% if current_user.isadm == 'Y' %>
 		<td class="list_actions" >
 			<%= link_to 'Mostrar', field %><br/>
 			<%= link_to 'Editar', edit_field_path(field) %><br/>
 			<%= link_to 'Eliminar', field, confirm: 'Esta seguro?', method: :delete %>
+			
 		</td>
-		
+
+
+<% else %> 	
+		<td class="list_actions" >		
+			<%= button_to '  Alquilar  ', line_items_path(:field_id => field) %>			
+		</td>	
+<% end %> 		
   </tr>
 <% end %>
 </table>
 </div>
 
-<br />
-
 <%= link_to 'Agregar Cancha de Fulbito', new_field_path %>
-<br />
-<div id="publica">
-<p><%= will_paginate @orders %></p>
-</div>
+<p><%= will_paginate @fields %></p>

@@ -1,5 +1,11 @@
 RentGame::Application.routes.draw do
 
+  resources :line_items
+
+  resources :carts
+
+  get "store/index"
+
 	controller :sessions do
 	get 'login' => :new
 	get 'signup' => "users#new"
@@ -19,7 +25,7 @@ RentGame::Application.routes.draw do
   get "sessions/create"
 
   get "sessions/destroy"
-
+  get "store/index"
 
   get "home/index"
   get "home/propietarios"
@@ -28,6 +34,7 @@ RentGame::Application.routes.draw do
   get "home/canchas_fulbito"
   get "home/servicios"
   get "home/publicidad"
+  
   resources :turnos
 
   resources :publicities

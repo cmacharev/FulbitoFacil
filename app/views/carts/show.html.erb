@@ -1,0 +1,41 @@
+<h2>Cancha a Alquilar</h2>
+<li>------------------- </li>
+<ul>
+<% @cart.line_items.each do |item| %>
+<dt><b><li><%= item.field.nombre %></li></dt></b>Tarifa  S/. <b><%= item.field.tarifa %></b>
+<% end %>
+
+</ul>
+
+<div id="product_list" >
+<div class="news">
+<h1>Seleccionar Servicios Adicionales</h1>
+</div>
+<hr class="dottedline">
+<br />
+
+
+<table width="530px">
+  <tr>
+    <th>Seleccionar</th>
+	<th>Tipo</th>
+    <th>Descripcion</th>
+    <th>Tarifa</th>
+    <th></th>
+    
+  </tr>
+ 
+
+<% @services.each do |service| %>
+  <tr>
+    <td><%= check_box_tag "services_ids[]", service.id %></td> 
+    <td><%= service.tipo %></td>
+    <td><%= service.descripcion %></td>
+    <td><%= service.tarifa %></td>
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+
+<%= button_to '  Confirmar ', @cart, :method => :delete,:confirm => 'Esta Seguro de Realizar el alquiler?' %>

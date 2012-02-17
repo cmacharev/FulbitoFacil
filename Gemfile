@@ -6,6 +6,7 @@ gem 'rails', '3.2.0'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'meta_search'
 
 
 # Gems used only for assets and not required
@@ -26,6 +27,7 @@ gem 'geocoder'
 gem 'will_paginate', '>= 3.0.pre'
 
 gem 'simple_form'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

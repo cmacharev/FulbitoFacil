@@ -4,6 +4,7 @@ class FieldsController < ApplicationController
   # GET /fields.json
   def index
     ## @fields = Field.all
+	@search = Field.search(params[:search]) 
     @fields = Field.paginate :page=>params[:page], :order=>'created_at desc', :per_page => 4
 	
     respond_to do |format|

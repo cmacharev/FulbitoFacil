@@ -10,13 +10,9 @@
     <th>Nombres</th>
     <th>Ap paterno</th>
     <th>Ap materno</th>
-    <th>Sexo</th>
     <th>Tipo doc</th>
     <th>Nro doc</th>
     <th>Email</th>
-    <th>Password</th>
-    <th>Fch nacimiento</th>
-    <th>Telefono</th>
     <th></th>
     
   </tr>
@@ -26,13 +22,9 @@
     <td><%= owner.nombres %></td>
     <td><%= owner.ap_paterno %></td>
     <td><%= owner.ap_materno %></td>
-    <td><%= owner.sexo %></td>
     <td><%= owner.tipo_doc %></td>
     <td><%= owner.nro_doc %></td>
     <td><%= owner.email %></td>
-    <td><%= owner.password %></td>
-    <td><%= owner.fch_nacimiento %></td>
-    <td><%= owner.telefono %></td>
     <td class="list_actions">
 	<%= link_to 'Mostrar', owner %><br />
    <%= link_to 'Editar', edit_owner_path(owner) %><br />
