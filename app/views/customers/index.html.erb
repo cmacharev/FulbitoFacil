@@ -1,4 +1,10 @@
+<div id="product_list" >
+<div class="news">
 <h1>Listado de Clientes</h1>
+</div>
+<hr class="dottedline">
+<br />
+
 
 <table>
   <tr>
@@ -7,8 +13,7 @@
     <th>Materno</th>
     <th>Telef.</th>
     <th></th>
-    <th></th>
-    <th></th>
+    
   </tr>
 
 <% @customers.each do |customer| %>
@@ -17,13 +22,14 @@
     <td><%= customer.ap_paterno %></td>
     <td><%= customer.ap_materno %></td>
     <td><%= customer.telefono %></td>
-    <td><%= link_to 'Mostrar', customer %></td>
-    <td><%= link_to 'Editar', edit_customer_path(customer) %></td>
-    <td><%= link_to 'Eliminar', customer, confirm: 'Esta Seguro?', method: :delete %></td>
+    <td class="list_actions">
+	<%= link_to 'Mostrar', customer %><br />
+   <%= link_to 'Editar', edit_customer_path(customer) %><br />
+    <%= link_to 'Eliminar', customer, confirm: 'Esta Seguro?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
 
 <%= link_to 'Agregar Cliente', new_customer_path %>

@@ -1,6 +1,12 @@
-<h1>Listing publicities</h1>
+<div id="product_list" >
+<div class="news">
+<h1>Listar Publicidad</h1>
+</div>
+<hr class="dottedline">
+<br />
 
-<table>
+
+<table width="530px">
   <tr>
     <th>Titulo</th>
     <th>Contenido</th>
@@ -9,27 +15,28 @@
     <th>Tarifa</th>
     <th>Num clicks</th>
     <th>Ubicacion</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th ></th>
+    
   </tr>
 
 <% @publicities.each do |publicity| %>
   <tr>
-    <td><%= publicity.titulo %></td>
+    <td><%= publicity.titulo %> </td>
     <td><%= publicity.contenido %></td>
     <td><%= publicity.fch_inicio %></td>
     <td><%= publicity.fch_fin %></td>
     <td><%= publicity.tarifa %></td>
     <td><%= publicity.num_clicks %></td>
     <td><%= publicity.ubicacion %></td>
-    <td><%= link_to 'Show', publicity %></td>
-    <td><%= link_to 'Edit', edit_publicity_path(publicity) %></td>
-    <td><%= link_to 'Destroy', publicity, confirm: 'Are you sure?', method: :delete %></td>
+    <td class="list_actions">
+	<%= link_to 'Mostrar', publicity %><br />
+    <%= link_to 'Editar', edit_publicity_path(publicity) %><br />
+    <%= link_to 'Eliminar', publicity, confirm: 'Are you sure?', method: :delete %>
+   </td>
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
 
-<%= link_to 'New Publicity', new_publicity_path %>
+<%= link_to 'Nueva Publicidad', new_publicity_path %>

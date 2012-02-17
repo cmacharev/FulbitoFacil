@@ -210,16 +210,18 @@
 }
 
 .depot_form label {
-  width: 5em;
+  width: 9em;
   float: left;
   text-align: right;
-  padding-top: 0.2em;
-  margin-right: 0.1em;
+  padding-top: 0.5em;
+  margin-right: 0.5em;
   display: block;
 }
 
+
 .depot_form select, .depot_form textarea, .depot_form input {
   margin-left: 0.5em;
+  
 }
 
 .depot_form .submit {

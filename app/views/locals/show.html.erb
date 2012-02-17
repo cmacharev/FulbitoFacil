@@ -20,9 +20,10 @@
   <b>Telefono:</b>
   <%= @local.telefono %>
 </p>
-
-
+<br />
+<div id="mapa">
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@local.latitude}%2C#{@local.longitude}" %>
-
-<%= link_to 'Edit', edit_local_path(@local) %> |
-<%= link_to 'Back', locals_path %>
+</div>
+<br />
+<%= link_to 'Editar', edit_local_path(@local) %> |
+<%= link_to 'regresar', locals_path %>

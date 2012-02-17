@@ -212,6 +212,10 @@ background:none;
 	border-right:dotted 1px #669ac6;
 	float:left;	
 }
+#mapa { border:dotted 1px #141;
+width:450px;
+height:300px;
+}
 
 .boxright {
 	width:240px;

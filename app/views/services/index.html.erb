@@ -1,13 +1,18 @@
+<div id="product_list" >
+<div class="news">
 <h1>Listar Servicios</h1>
+</div>
+<hr class="dottedline">
+<br />
 
-<table>
+
+<table width="530px">
   <tr>
     <th>Tipo</th>
     <th>Descripcion</th>
     <th>Tarifa</th>
     <th></th>
-    <th></th>
-    <th></th>
+    
   </tr>
 
 <% @services.each do |service| %>
@@ -15,13 +20,13 @@
     <td><%= service.tipo %></td>
     <td><%= service.descripcion %></td>
     <td><%= service.tarifa %></td>
-    <td><%= link_to 'Mostrar', service %></td>
-    <td><%= link_to 'Editar', edit_service_path(service) %></td>
-    <td><%= link_to 'Eliminar', service, confirm: 'Esta Seguro?', method: :delete %></td>
+    <td class="list_actions"><%= link_to 'Mostrar', service %><br />
+    <%= link_to 'Editar', edit_service_path(service) %><br />
+    <%= link_to 'Eliminar', service, confirm: 'Esta Seguro?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
 
 <%= link_to 'Nuevo Servicio', new_service_path %>

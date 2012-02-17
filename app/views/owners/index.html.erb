@@ -1,4 +1,9 @@
-<h1>Listing owners</h1>
+<div id="product_list" >
+<div class="news">
+<h1>Lista de Propietarios</h1>
+</div>
+<hr class="dottedline">
+<br />
 
 <table>
   <tr>
@@ -13,8 +18,7 @@
     <th>Fch nacimiento</th>
     <th>Telefono</th>
     <th></th>
-    <th></th>
-    <th></th>
+    
   </tr>
 
 <% @owners.each do |owner| %>
@@ -29,13 +33,14 @@
     <td><%= owner.password %></td>
     <td><%= owner.fch_nacimiento %></td>
     <td><%= owner.telefono %></td>
-    <td><%= link_to 'Show', owner %></td>
-    <td><%= link_to 'Edit', edit_owner_path(owner) %></td>
-    <td><%= link_to 'Destroy', owner, confirm: 'Are you sure?', method: :delete %></td>
+    <td class="list_actions">
+	<%= link_to 'Mostrar', owner %><br />
+   <%= link_to 'Editar', edit_owner_path(owner) %><br />
+   <%= link_to 'Eliminar', owner, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
 
-<%= link_to 'New Owner', new_owner_path %>
+<%= link_to 'Agregar Propietario', new_owner_path %>

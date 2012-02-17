@@ -1,4 +1,11 @@
+<div id="product_list" >
+<div class="news">
 <h1>Locales</h1>
+</div>
+<hr class="dottedline">
+<br />
+<br />
+
 
 <table>
   <tr>
@@ -7,8 +14,7 @@
     <th>Distrito</th>
     <th>Telefono</th>
     <th></th>
-    <th></th>
-    <th></th>
+    
   </tr>
 
 <% @locals.each do |local| %>
@@ -17,13 +23,13 @@
     <td><%= local.direccion %></td>
     <td><%= local.distrito %></td>
     <td><%= local.telefono %></td>
-    <td><%= link_to 'Mostrar', local %></td>
-    <td><%= link_to 'Editar', edit_local_path(local) %></td>
-    <td><%= link_to 'Eliminar', local, confirm: 'Esta Seguro?', method: :delete %></td>
+    <td class="list_actions"><%= link_to 'Mostrar', local %><br />
+    <%= link_to 'Editar', edit_local_path(local) %><br />
+    <%= link_to 'Eliminar', local, confirm: 'Esta Seguro?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
 
 <%= link_to 'Nuevo Local', new_local_path %>
